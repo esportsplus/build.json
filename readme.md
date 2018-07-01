@@ -45,7 +45,7 @@ Module `build.json` structure:
   "scss": [
       "scss/file1.scss",
       "scss/file2.scss"
-  ] 
+  ]
 }
 ```
 
@@ -56,7 +56,7 @@ Each asset path is appended to the module and added to the compile array (for ex
 
 Once all modules have been included the data is passed through the compile method to build each file.
 
-Using the `json` configuration listed above the following files would be created:
+Using the configuration listed above the following files would be created:
 
 * `../public/css/app.css`
 * `../public/js/app.js`
