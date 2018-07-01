@@ -10,15 +10,15 @@ SCSS Example: `build-json --manifest \"assets/build.json\" --assets scss --outpu
 
 JS Example: `build-json --manifest \"assets/build.json\" --assets js --output \"../public/js\"`
 
-* `--assets`: Determines the asset to compile. (to compile multiple use a `,` without spaces)
-* `--manifest`: Path to primary `build.json` file (relative to `package.json` directory)
-* `--output`: Path to output directory (relative to `package.json` directory)
+* `--assets`: The list of assets to run through the compiler (to compile multiple use a `,` without spaces).
+* `--manifest`: The primary `build.json` file path (relative to `package.json` directory).
+* `--output`: The output directory path (relative to `package.json` directory).
 
 ## Usage
 
-Create a `build.json` file in the asset directory of your project (for example: `my-project/resources/assets/build.json`)
+Create the primary `build.json` file in the asset directory of your project (for example: `project/resources/assets/build.json`).
 
-This file acts as the asset manifest and contains a list of modules to run through the compiler in the order provided. For example:
+Primary `build.json` structure:
 
 ```json
 {
@@ -29,14 +29,10 @@ This file acts as the asset manifest and contains a list of modules to run throu
 }
 ```
 
-The content of the primary `build.json` file is read and looped through to search for each modules' `build.json` file.
+* `app`: The name used when saving the compiled file (example: `{output-directory}/app.css` or `{output-directory}/app.js`).
+* `[array]`: The list of modules used by the array key.
 
-* `app`: The filename to use when saving the compiled file.
-* _array list_: The list of modules to compile.
-
-Each relative module path is appended to the primary `build.json` path and the file is read (for example: `my-project/resources/assets/modules/button/build.json`)
-
-_When a `build.json` file is not found an error is thrown_
+Each module path is appended to the primary `build.json` directory and is used (in order) to search for the modules' `build.json` file (for example: `project/resources/assets/modules/button/build.json`).
 
 Module `build.json` structure:
 
@@ -49,20 +45,18 @@ Module `build.json` structure:
   "scss": [
       "scss/file1.scss",
       "scss/file2.scss"
-  ]
+  ] 
 }
 ```
 
-* `js` and `scss`: Determine the method to use when compiling the files.
-* _array list_: The list of assets to include within the compile command.
+* `js` and `scss`: The array key determines the method to use when compiling the files.
+* `[array]`: The list of assets to include within the compile command.
 
-Each relative asset path is appended to the module and added to a compile array (for example: `my-project/resources/assets/modules/button/js/file1.js`)
+Each asset path is appended to the module and added to the compile array (for example: `project/resources/assets/modules/button/js/file1.js`)
 
-_Relative paths are used throughout the build process to enable custom directory structure for any project_
+Once all modules have been included the data is passed through the compile method to build each file.
 
-Once all modules have been included the data is passed through the compile method to build each file
-
-Following the `json` configuration listed above the following files would be created
+Using the `json` configuration listed above the following files would be created:
 
 * `../public/css/app.css`
 * `../public/js/app.js`
