@@ -1,14 +1,14 @@
 ## Installation
 
 ```
-npm install git+https://github.com/esportsplus/build.json.git
+npm install git+https://github.com/esportsplus/build-json.git
 ```
 
 ## Command
 
-SCSS Example: `build.json --manifest \"assets/build.json\" --assets scss --output \"../public/css\"`
+SCSS Example: `build-json --manifest \"assets/build.json\" --assets scss --output \"../public/css\"`
 
-JS Example: `build.json --manifest \"assets/build.json\" --assets js --output \"../public/js\"`
+JS Example: `build-json --manifest \"assets/build.json\" --assets js --output \"../public/js\"`
 
 * `--assets`: Determines the asset to compile. (to compile multiple use a `,` without spaces)
 * `--manifest`: Path to primary `build.json` file (relative to `package.json` directory)
