@@ -10,7 +10,7 @@ SCSS Example: `build-json --manifest \"assets/build.json\" --assets scss --outpu
 
 JS Example: `build-json --manifest \"assets/build.json\" --assets js --output \"../public/js\"`
 
-* `--assets`: The list of assets to run through the compiler (to compile multiple use a `,` without spaces).
+* `--assets`: The list of assets to run through the compiler (to compile multiple assets at the same time use a comma without spaces).
 * `--manifest`: The primary `build.json` file path (relative to `package.json` directory).
 * `--output`: The output directory path (relative to `package.json` directory).
 
