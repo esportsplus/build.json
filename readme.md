@@ -18,7 +18,7 @@ JS Example: `build-json --manifest \"assets/build.json\" --assets js --output \"
 
 Create a `build.json` file in the asset directory of your project (for example: `my-project/resources/assets/build.json`)
 
-This file acts as the asset manifest and contains a list of modules to run through the compiler. For example:
+This file acts as the asset manifest and contains a list of modules to run through the compiler in the order provided. For example:
 
 ```json
 {
