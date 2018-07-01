@@ -1,0 +1,16 @@
+{
+  "name": "build.json",
+  "author": "esportsplus",
+  "description": "Compile Sass Or Merge JS Using `build.json` Files",
+  "version": "0.0.1",
+  "bin": {
+    "build.json": "index.js"
+  },
+  "dependencies": {
+    "concat": "^1.0.3",
+    "fs-extra": "^6.0.1",
+    "minimist": "^1.2.0",
+    "node-sass": "^4.9.0",
+    "promise": "^8.0.1"
+  }
+}
