@@ -1,14 +1,14 @@
 ## Installation
 
 ```
-npm install git+https://github.com/esportsplus/bundle.json.git
+npm install git+https://github.com/esportsplus/bundle-json.git
 ```
 
 ## Command
 
-SCSS Example: `bundle.json --manifest \"assets/bundle.json\" --assets scss --output \"../public/css\"`
+SCSS Example: `bundle-json --manifest \"assets/bundle.json\" --assets scss --output \"../public/css\"`
 
-JS Example: `bundle.json --manifest \"assets/bundle.json\" --assets js --output \"../public/js\"`
+JS Example: `bundle-json --manifest \"assets/bundle.json\" --assets js --output \"../public/js\"`
 
 * `--assets`: The list of assets to run through the compiler (to compile multiple assets at the same time use a comma without spaces).
 * `--manifest`: The primary `bundle.json` file path (relative to `package.json` directory).
