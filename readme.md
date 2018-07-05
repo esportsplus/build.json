@@ -1,24 +1,24 @@
 ## Installation
 
 ```
-npm install git+https://github.com/esportsplus/build-json.git
+npm install git+https://github.com/esportsplus/bundle.json.git
 ```
 
 ## Command
 
-SCSS Example: `build-json --manifest \"assets/build.json\" --assets scss --output \"../public/css\"`
+SCSS Example: `bundle.json --manifest \"assets/bundle.json\" --assets scss --output \"../public/css\"`
 
-JS Example: `build-json --manifest \"assets/build.json\" --assets js --output \"../public/js\"`
+JS Example: `bundle.json --manifest \"assets/bundle.json\" --assets js --output \"../public/js\"`
 
 * `--assets`: The list of assets to run through the compiler (to compile multiple assets at the same time use a comma without spaces).
-* `--manifest`: The primary `build.json` file path (relative to `package.json` directory).
+* `--manifest`: The primary `bundle.json` file path (relative to `package.json` directory).
 * `--output`: The output directory path (relative to `package.json` directory).
 
 ## Usage
 
-Create the primary `build.json` file in the asset directory of your project (for example: `project/resources/assets/build.json`).
+Create the primary `bundle.json` file in the asset directory of your project (for example: `project/resources/assets/bundle.json`).
 
-Primary `build.json` structure:
+Primary `bundle.json` structure:
 
 ```json
 {
@@ -32,9 +32,9 @@ Primary `build.json` structure:
 * `app`: The name used when saving the compiled file (example: `{output-directory}/app.css` or `{output-directory}/app.js`).
 * `[array]`: The list of modules used by the array key.
 
-Each module path is appended to the primary `build.json` directory and is used (in order) to search for the modules' `build.json` file (for example: `project/resources/assets/modules/button/build.json`).
+Each module path is appended to the primary `bundle.json` directory and is used (in order) to search for the modules' `bundle.json` file (for example: `project/resources/assets/modules/button/bundle.json`).
 
-Module `build.json` structure:
+Module `bundle.json` structure:
 
 ```json
 {
