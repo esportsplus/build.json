@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-var minimist = require('minimist'),
+let minimist = require('minimist'),
     path = require('path');
 
-var read = require('./lib/read'),
+let read = require('./lib/read'),
     write = require('./lib/write');
 
 
-var error = (error) => {
+let error = (error) => {
     console.error(error);
     process.exit();
 };
 
 
-var args = minimist(process.argv.slice(2), {
+let args = minimist(process.argv.slice(2), {
         alias: {
             a: 'assets',
             m: 'manifest',
@@ -42,7 +42,7 @@ if (missing.length > 0) {
 }
 
 
-var data = {
+let data = {
         assets: args.a.split(','),
         directory: path.parse(args.m).dir,
         manifest: args.m,
@@ -54,10 +54,10 @@ var data = {
 
 read.manifest(data).then((output) => {
     Object.keys(output.map).forEach((filename) => {
-        var data = output.map[filename],
+        let data = output.map[filename],
             file = path.join(output.path, filename);
 
-        var js = data['js'] || null,
+        let js = data['js'] || null,
             scss = data['scss'] || null;
 
         if (js) {
